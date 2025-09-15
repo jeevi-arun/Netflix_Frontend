@@ -24,6 +24,12 @@ function App() {
   }
 
   function check(){
+
+     if (!user || !pwd) {
+    alert("Please fill in both email address/phone number and password.");
+    return; // Stop further execution
+  }
+
     var loginDetails= axios.get(`http://localhost:5000/login?username=${user}&password=${pwd}`)
     loginDetails.then(function(data){
       console.log(data.data)
@@ -61,14 +67,8 @@ function App() {
       className="bg-[#333] text-white w-full p-3 mb-4 rounded outline-none placeholder-gray-400"
     />
 
-    <input
-      type="password"
-      name="password"
-      placeholder="Password"
-      onChange={handlePwd}
-      required
-      className="bg-[#333] text-white w-full p-3 mb-6 rounded outline-none placeholder-gray-400"
-    />
+    <input type="password" name="password" placeholder="Password" onChange={handlePwd}
+     className="bg-[#333] text-white w-full p-3 mb-6 rounded outline-none placeholder-gray-400"/>
 
     <button
       onClick={check}
