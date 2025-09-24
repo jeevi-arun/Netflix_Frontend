@@ -22,7 +22,7 @@ function Login() {
       return
     }
 
-    axios.get(`http://localhost:5000/login?username=${user}&password=${pwd}`)
+    axios.get(`https://netflix-backend-7kj9.onrender.com?username=${user}&password=${pwd}`)
       .then(function (data) {
         if (data.data === true) {
           navigate('/success')

@@ -13,7 +13,7 @@ function Register() {
       return
     }
 
-    axios.post("http://localhost:5000/register", {
+    axios.post("https://netflix-backend-7kj9.onrender.com", {
       username: user,
       password: pwd
     }).then((res) => {
